@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== FULL PAGE BACKGROUND WITH BLUR ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Image Layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("../assets/bg.png") center/cover no-repeat;
+
+  filter: blur(6px);          /* Blur effect */
+  transform: scale(1.05);     /* Prevent white edges after blur */
+  z-index: -2;
+  
+}
+
+/* Dark Overlay for Professional Look */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 40, 0.65);
+  z-index: -1;
+}
+
+/* ===== PAGE TITLE ===== */
+h1 {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 34px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #cbd5ff;
+  font-size: 16px;
+}
+
+/* ===== CENTER CONTAINER ===== */
+.container {
+  width: 480px;
+  margin: 0 auto 60px auto;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+
+  color: white;
+}
+
+/* ===== INPUT FIELDS ===== */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transition: 0.3s;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #dddddd;
+}
+
+input:focus,
+textarea:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+/* ===== BUTTON ===== */
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.7);
+}
+
+/* ===== RESULT BOX ===== */
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 4px solid #00c6ff;
+}
